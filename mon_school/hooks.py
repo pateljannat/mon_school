@@ -196,7 +196,8 @@ website_route_rules = [
   {"from_route": "/<contest>/submissions", "to_route": "contest_sketches/index"},
   {"from_route": "/<contest>/review", "to_route": "contest_sketches/review"},
   {"from_route": "/<contest>/submissions/edit", "to_route": "contest_sketches/edit"},
-  {"from_route": "/<contest>/submissions/<sketch>", "to_route": "contest_sketches/view"}
+  {"from_route": "/<contest>/submissions/<sketch>", "to_route": "contest_sketches/view"},
+  {"from_route": "/<string(minlength=4):username>", "to_route": "profiles/profile"}
 ]
 school_markdown_macro_renderers = {
 	"Exercise": "mon_school.mon_school.plugins.exercise_renderer",
