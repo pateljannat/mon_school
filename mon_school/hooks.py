@@ -196,9 +196,9 @@ website_route_rules = [
   {"from_route": "/<contest>/submissions", "to_route": "contest_sketches/index"},
   {"from_route": "/<contest>/review", "to_route": "contest_sketches/review"},
   {"from_route": "/<contest>/submissions/edit", "to_route": "contest_sketches/edit"},
-  {"from_route": "/<contest>/submissions/<sketch>", "to_route": "contest_sketches/view"},
-  {"from_route": "/<string(minlength=4):username>", "to_route": "profiles/profile"}
+  {"from_route": "/<contest>/submissions/<sketch>", "to_route": "contest_sketches/view"}
 ]
+
 school_markdown_macro_renderers = {
 	"Exercise": "mon_school.mon_school.plugins.exercise_renderer",
 	"Image": "mon_school.mon_school.plugins.image_renderer",
@@ -210,3 +210,7 @@ from mon_school.mon_school.page_renderers import page_renderer as _page_renderer
 page_renderer = _page_renderer
 
 profile_url_prefix = "/"
+
+website_redirects = [
+	{"source": "/users/(.*)", "target": "/\1"},
+]
